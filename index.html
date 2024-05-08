@@ -7,10 +7,15 @@
     <body>
         <div id="app">
             <h1>Agenda de contatos</h1>
-            <button v-on:click="getData()">Carregar dados</button>
+
+            <label for="search-input">Pesquisar</label><br/>
+            <input id="search-input" type="text" v-model="searchText">
+
+            <br/> <br/>
+            <button v-on:click="getData()">Carregar contatos</button>
             <address>
                 <ul>
-                    <li v-for="item in contactList">
+                    <li v-for="item in listResult">
                         <img v-bind:src="item.picture" v-bind:alt="item.firstName"><br/>
                         {{ item.firstName }} {{ item.lastName }}<br/>
                         Email: {{ item.email }}<br/>
@@ -18,7 +23,6 @@
                     </li>
                 </ul>
             </address>
-
         </div>
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
