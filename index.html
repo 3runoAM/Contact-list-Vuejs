@@ -11,18 +11,25 @@
             <label for="search-input">Pesquisar</label><br/>
             <input id="search-input" type="text" v-model="searchText">
 
+            <div v-if="listResult.length <= 0">
+                Nenhum contato encontrado
+            </div>
+
             <br/> <br/>
             <button v-on:click="getData()">Carregar contatos</button>
-            <address>
                 <ul>
-                    <li v-for="item in listResult">
+                    <li v-for="item, index in listResult">
+                    <address>
                         <img v-bind:src="item.picture" v-bind:alt="item.firstName"><br/>
                         {{ item.firstName }} {{ item.lastName }}<br/>
                         Email: {{ item.email }}<br/>
                         Cidade: {{ item.city }}<br/>
+                    </address>
+                    <button v-on:click="removeContact(index)">Excluir contato</button>
+                    <br/>
                     </li>
                 </ul>
-            </address>
+
         </div>
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

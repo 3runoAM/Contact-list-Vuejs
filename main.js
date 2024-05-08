@@ -61,6 +61,10 @@ const app = Vue.createApp({
                 this.contactList.push(contact)
             });
             return contactList
+        },
+
+        removeContact(index) {
+            this.contactList.splice(index, 1)
         }
     }
 })
