@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Agenda de contatos</h1>
+
+            <address>
+                <img v-bind:src="picture" v-bind:alt="firstName"><br/>
+                {{ firstName }} {{ lastName }}<br/>
+                Email: {{ email }}<br/>
+                Cidade: {{ city }}<br/>
+            </address>
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
